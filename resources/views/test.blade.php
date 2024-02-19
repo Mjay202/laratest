@@ -3,7 +3,7 @@
 <h2> {{$heading}}  </h2>
 
 @foreach ($listings as $listing)
-    <h3> {{$listing['name']}} </h3>
+    <a href="/listing/{{$listing['id']}}"> <h3> {{$listing['name']}} </h3></a>
     <p> {{$listing["details"]}} </p>
 
 @endforeach
