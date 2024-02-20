@@ -18,6 +18,4 @@
 
 @endunless
 
-@extends('layout')
-
-@section('content')
+@endsection('content')
