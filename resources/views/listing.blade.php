@@ -1,2 +1,2 @@
-<h3> {{$listing['name']}} </h3>
-<p> {{$listing["details"]}} </p>
+<h3> {{$listing['title']}} </h3>
+<p> {{$listing["description"]}} </p>
