@@ -17,3 +17,7 @@
 <p>There is no listing available<p> 
 
 @endunless
+
+@extends('layout')
+
+@section('content')
