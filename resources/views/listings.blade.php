@@ -17,5 +17,4 @@
 <p>There is no listing available<p> 
 
 @endunless
-
 @endsection('content')
