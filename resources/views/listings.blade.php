@@ -1,3 +1,7 @@
+@extends('layout')
+
+@section('content')
+
 <h1>This is a test</h1>
 
 <h2> {{$heading}}  </h2>
@@ -12,4 +16,4 @@
 @else
 <p>There is no listing available<p> 
 
-{{-- @endunless
+@endunless
