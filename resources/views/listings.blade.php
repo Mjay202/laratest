@@ -16,5 +16,5 @@
 @else
 <p>There is no listing available<p> 
 
-@endunless
+@endunless;
 @endsection('content')
