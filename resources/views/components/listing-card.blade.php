@@ -1,8 +1,6 @@
 
 @props(["listing"])
-@php
-   $tags = explode(",", $listing->tags)
-@endphp
+
     <x-card>
         <div class="flex">
             <img
@@ -15,7 +13,7 @@
                     <a href="listings/{{$listing->id}}">{{$listing->title}}</a>
                 </h3>
                 <div class="text-xl font-bold mb-4">{{$listing->company}}</div>
-                <x-listing-tags :tags="$tags" />
+                <x-listing-tags :listTags="$listing->tags" />
                 <div class="text-lg mt-4">
                     <i class="fa-solid fa-location-dot"></i> Boston,
                     MA

@@ -1,6 +1,3 @@
-@php
-   $tags = explode(",", $listing->tags)
-@endphp
 
 <x-layout>
 @include("partials._search")
@@ -22,7 +19,7 @@
                         <h3 class="text-2xl mb-2">{{$listing->title}}</h3>
                         <div class="text-xl font-bold mb-4">{{$listing->company}}</div>
                         
-                        <x-listing-tags :tags="$tags" />
+                        <x-listing-tags :listTags="$listing->tags" />
                      
                         <div class="text-lg my-4">
                             <i class="fa-solid fa-location-dot"></i> 
