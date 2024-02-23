@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ListingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
@@ -19,29 +20,20 @@ use App\Models\Listing;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('listings', [
-        "heading" => "Listing Items",
-        "listings" => Listing::all()
-    ]);
-});
+Route::get('/', [ListingController::class, 'index']);
 
-Route::get("/listings/{listing}", function(Listing $listing){
-    return view('listing', [
-        "listing" => $listing
-    ]);
-});
+Route::get("/listings/{listing}", [ListingController::class, 'show']);
 
-Route::get('/test', function(){
-    return response("Hello World");
-});
+// Route::get('/test', function(){
+//     return response("Hello World");
+// });
 
-Route::get('/post/{id}', function($id){
-    // ddd($id);
-    return response("Your id is" . $id)
-    ->header('fooo', 'jaja');
-})->where('id', '[0-9]');
+// Route::get('/post/{id}', function($id){
+//     // ddd($id);
+//     return response("Your id is" . $id)
+//     ->header('fooo', 'jaja');
+// })->where('id', '[0-9]');
 
-Route::get('/foreal', function(Request $request){
-    return response($request->name);
-});
+// Route::get('/foreal', function(Request $request){
+//     return response($request->name);
+// });
