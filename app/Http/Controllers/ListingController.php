@@ -16,7 +16,7 @@ class ListingController extends Controller
     ]);
     }
 
-    // SHOW SINGLE LISTING
+    // SHOW SINGLE LISTING 
     public function show(Listing $listing){
          return view('listings.show', [
         "listing" => $listing

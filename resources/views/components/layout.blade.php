@@ -48,7 +48,9 @@
 
 
         {{-- MY VIEWS --}}
-        @yield('content')
+        <main>
+            {{$slot}}
+        </main>
 
         {{-- MY VIEWS ENDS  --}}
 
