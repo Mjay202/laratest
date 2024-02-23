@@ -15,7 +15,7 @@
 </div>
     
 @else
-<p>There is no listing available<p> 
+<p>Listing not available<p> 
 
-@endunless;
+@endunless
 </x-layout>
