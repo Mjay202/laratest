@@ -24,4 +24,10 @@ class ListingController extends Controller
     ]);
     }
 
+    // SHOW CREATE LISTING PAGE
+
+    public function create(){
+        return view('listings.create');
+    }
+
 }
