@@ -30,4 +30,9 @@ class ListingController extends Controller
         return view('listings.create');
     }
 
+    // STORE NEW LISTING
+    public function store(){
+        
+    }
+
 }

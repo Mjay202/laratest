@@ -20,23 +20,19 @@ use App\Models\Listing;
 //     return view('welcome');
 // });
 
+// GET ALL LISTING
 Route::get('/', [ListingController::class, 'index']);
 
+
+// GET NEW LISTING FORM
 Route::get('/listings/create', [ListingController::class, 'create']);
 
+
+// POST NEW LISTING
+Route::post('/listings', [ListingController::class, 'store']);
+
+
+// GET SINGLE LISTING
 Route::get("/listings/{listing}", [ListingController::class, 'show']);
 
 
-// Route::get('/test', function(){
-//     return response("Hello World");
-// });
-
-// Route::get('/post/{id}', function($id){
-//     // ddd($id);
-//     return response("Your id is" . $id)
-//     ->header('fooo', 'jaja');
-// })->where('id', '[0-9]');
-
-// Route::get('/foreal', function(Request $request){
-//     return response($request->name);
-// });
