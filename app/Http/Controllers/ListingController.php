@@ -25,6 +25,13 @@ class ListingController extends Controller
     ]);
     }
 
+    // SHOW EDIT LISTING 
+    public function edit(Listing $listing){
+         return view('listings.edit', [
+        "listing" => $listing
+    ]);
+    }
+
     // SHOW CREATE LISTING PAGE
 
     public function create(){
@@ -42,6 +49,10 @@ class ListingController extends Controller
             'tags' => 'required',
             'description' => 'required'
         ]);
+
+        if($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
 
         Listing::create($formFields);
         return redirect('/')->with('message', 'Listing created successfully!');
