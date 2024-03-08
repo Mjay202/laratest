@@ -37,7 +37,7 @@ class ListingController extends Controller
         return view('listings.create');
     }
 
-    // STORE NEW LISTING
+    // CREATE NEW LISTING
     public function store(Request $request){
         $formFields = $request->validate([
             'title' => 'required',
@@ -77,6 +77,12 @@ class ListingController extends Controller
 
        $listing->update($formFields);
         return back()->with('message', 'Listing updated successfully!');
+    }
+
+    //DELETE SINGLE LISTING 
+    public function destroy (Listing $listing) {
+        $listing->delete();
+        return redirect('/')->with('message', 'Listing deleted succesfully!');
     }
 
 }
