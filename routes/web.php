@@ -47,4 +47,7 @@ Route::delete("/listings/{listing}", [ListingController::class, 'destroy']);
 
 
 // GET REGISTER PAGE
-Route::get('register', [UserController::class, 'create']);
+Route::get('/register', [UserController::class, 'create']);
+
+// CREATE NEW USER
+Route::post('/users', [UserController::class, 'store']);
