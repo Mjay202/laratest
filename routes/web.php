@@ -32,9 +32,12 @@ Route::get('/listings/create', [ListingController::class, 'create']);
 Route::post('/listings', [ListingController::class, 'store']);
 
 // SHOW EDIT FORM
-Route::get('listings/{listing}/edit', [ListingController::class, "edit"]);
+Route::get('listings/{listing}/edit', [ListingController::class, 'edit']);
 
 // GET SINGLE LISTING
 Route::get("/listings/{listing}", [ListingController::class, 'show']);
+
+// UPDATE SINGLE LISTING
+Route::put("/listings/{listing}", [ListingController::class, 'update']);
 
 

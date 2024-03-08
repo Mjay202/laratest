@@ -9,8 +9,7 @@ use Illuminate\Validation\Rule;
 
 class ListingController extends Controller
 {
-    //SHOW ALL LISTINGS
-    // 
+    //SHOW ALL LISTINS
     public function index(){
    
         return view('listings.index', [
@@ -57,7 +56,27 @@ class ListingController extends Controller
         Listing::create($formFields);
         return redirect('/')->with('message', 'Listing created successfully!');
 
+    }
 
+
+    // UPDATE EXISTING LISTING
+    public function update(Request $request, Listing $listing){
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => ['required'],
+            'location' => 'required',
+            'email' => ['required', 'email'],
+            'website' => 'required',
+            'tags' => 'required',
+            'description' => 'required'
+        ]);
+
+        if($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+       $listing->update($formFields);
+        return back()->with('message', 'Listing updated successfully!');
     }
 
 }
