@@ -35,6 +35,9 @@ Route::post('/listings', [ListingController::class, 'store'])->middleware('auth'
 // SHOW EDIT FORM
 Route::get('listings/{listing}/edit', [ListingController::class, 'edit'])->middleware('auth');
 
+// MANAGE LISTINGS
+Route::get('listings/manage', [ListingController::class, 'manage'])->middleware('auth');
+
 // GET SINGLE LISTING
 Route::get("/listings/{listing}", [ListingController::class, 'show']);
 
