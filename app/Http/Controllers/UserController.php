@@ -35,4 +35,18 @@ class UserController extends Controller
         return redirect('/')->with('message', 'You just login, ' . $formFields['name']);
     }
 
+    // Logout Users
+
+    public function logout (Request $request){
+
+        auth()->logout();
+
+        // Recommended to invalidate user session & regenerate token
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/')->with('message', 'You logged out successfully!!!');
+    }
+
 }
