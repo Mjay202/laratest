@@ -50,7 +50,13 @@ Route::delete("/listings/{listing}", [ListingController::class, 'destroy']);
 Route::get('/register', [UserController::class, 'create']);
 
 // CREATE NEW USER
-Route::post('/users', [UserController::class, 'store']);
+Route::post('/users/create', [UserController::class, 'store']);
 
 //LOGOUT USER
 Route::post('/logout', [UserController::class, 'logout']);
+
+//SHOW LOGIN PAGE
+Route::get('/login', [UserController::class, 'login']);
+
+//LOGIN USER
+Route::post('/users/login', [UserController::class, 'authenticate']);
